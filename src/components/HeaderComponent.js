@@ -47,11 +47,13 @@ class Header extends Component {
   handleLogin(event) {
     this.toggleModal();
     alert(
-      "Username: " +
+      "Full Names : " +
+        this.fullname.value +
+        " | Username: " +
         this.username.value +
-        " Password: " +
+        " | Password: " +
         this.password.value +
-        " Remember: " +
+        " | Remember: " +
         this.remember.checked
     );
     event.preventDefault();
@@ -64,14 +66,7 @@ class Header extends Component {
           <Navbar dark expand="md">
             <div className="container">
               <NavbarToggler onClick={this.toggleNav} />
-              <NavbarBrand className="mr-auto" href="/">
-                <img
-                  src="assets/images/logo.png"
-                  height="30"
-                  width="41"
-                  alt="Ristorante Con Fusion"
-                />
-              </NavbarBrand>
+
               <Collapse isOpen={this.state.isNavOpen} navbar>
                 <Nav navbar>
                   <NavItem>
@@ -81,49 +76,65 @@ class Header extends Component {
                   </NavItem>
                   <NavItem>
                     <NavLink className="nav-link" to="/aboutus">
-                      <span className="fa fa-info fa-lg"></span> About Us
+                      About Us
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink className="nav-link" to="/menu">
-                      <span className="fa fa-list fa-lg"></span> Menu
+                      Menu
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink className="nav-link" to="/contactus">
-                      <span className="fa fa-addess-card fa-lg"></span> Contact
-                      Us
+                      Contact Us
                     </NavLink>
+                  </NavItem>
+                </Nav>
+                <Nav className="ml-auto" navbar>
+                  <NavItem>
+                    <Button
+                      outline
+                      onClick={this.toggleModal}
+                      style={{ backgroundColor: "#dedede" }}
+                    >
+                      <span className="fa fa-sign-in fa-md"></span> Register Now
+                    </Button>
                   </NavItem>
                 </Nav>
               </Collapse>
             </div>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Button outline onClick={this.toggleModal}>
-                  <span className="fa fa-sign-in fa-lg"></span> LogIn
-                </Button>
-              </NavItem>
-            </Nav>
           </Navbar>
           <Jumbotron>
             <div className="container">
               <div className="row row-header">
                 <div className="col-12 col-sm-6">
-                  <h1>Ristorante con Fusion</h1>
+                  <h1>The Spici Restaurant</h1>
                   <p>
-                    We take inspiration from the World's best cuisines, and
-                    create a unique fusion experience. Our lipsmacking creations
-                    will tickle your culinary senses!
+                    A spice is a seed, fruit, root, bark, or other plant
+                    substance primarily used for flavoring or coloring food.
+                    Spices are distinguished from herbs, which are the leaves,
+                    flowers, or stems of plants used for flavoring or as a
+                    garnish!
                   </p>
                 </div>
               </div>
             </div>
           </Jumbotron>
           <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-            <ModalHeader toggle={this.toggleModal}>LogIn</ModalHeader>
+            <ModalHeader toggle={this.toggleModal}>
+              Register to order food
+            </ModalHeader>
             <ModalBody>
               <Form onSubmit={this.handleLogin}>
+                <FormGroup>
+                  <Label htmlFor="fullname">Full Names</Label>
+                  <Input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    innerRef={(input) => (this.fullname = input)}
+                  />
+                </FormGroup>
                 <FormGroup>
                   <Label htmlFor="username">Username</Label>
                   <Input
@@ -152,7 +163,7 @@ class Header extends Component {
                     Remember me
                   </Label>
                 </FormGroup>
-                <Button type="submit" value="submit" color="primary">
+                <Button type="submit" value="submit" color="success">
                   Login
                 </Button>
               </Form>

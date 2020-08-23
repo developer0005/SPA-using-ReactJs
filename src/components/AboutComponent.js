@@ -50,10 +50,10 @@ function About(props) {
           <h2>Our History</h2>
           <p>
             Started in 2010, Ristorante con Fusion quickly established itself as
-            a culinary icon par excellence in Hong Kong. With its unique brand
-            of world fusion cuisine that can be found nowhere else, it enjoys
-            patronage from the A-list clientele in Hong Kong. Featuring four of
-            the best three-star Michelin chefs in the world, you never know what
+            a culinary icon par excellence in Kigali. With its unique brand of
+            world fusion cuisine that can be found nowhere else, it enjoys
+            patronage from the A-list clientele in Kigali. Featuring four of the
+            best three-star Michelin chefs in the world, you never know what
             will arrive on your plate the next time you visit us.
           </p>
           <p>
@@ -65,7 +65,7 @@ function About(props) {
         </div>
         <div className="col-12 col-md-5">
           <Card>
-            <CardHeader className="bg-primary text-white">
+            <CardHeader className="bg-success text-white">
               Facts At a Glance
             </CardHeader>
             <CardBody>
@@ -75,7 +75,7 @@ function About(props) {
                 <dt className="col-6">Major Stake Holder</dt>
                 <dd className="col-6">HK Fine Foods Inc.</dd>
                 <dt className="col-6">Last Year's Turnover</dt>
-                <dd className="col-6">$1,250,375</dd>
+                <dd className="col-6">RWF.1,250,375</dd>
                 <dt className="col-6">Employees</dt>
                 <dd className="col-6">40</dd>
               </dl>
@@ -104,7 +104,7 @@ function About(props) {
       </div>
       <div className="row row-content">
         <div className="col-12">
-          <h2>Corporate Leadership</h2>
+          <h2>Our Amazing Team</h2>
         </div>
         <div className="col-12">
           <Media list>{leaders}</Media>

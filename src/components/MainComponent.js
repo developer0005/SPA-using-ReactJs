@@ -30,13 +30,21 @@ class Main extends Component {
   render() {
     const HomePage = () => {
       return (
-        <Home
-          dish={this.props.dishes.filter((dish) => dish.featured)[0]}
-          promotion={
-            this.props.promotions.filter((promotion) => promotion.featured)[0]
-          }
-          leader={this.props.leaders.filter((leader) => leader.featured)[0]}
-        />
+        <div>
+          <h2 style={{ textAlign: "center" }}>Promotion</h2>
+
+          <Home
+            dish={this.props.dishes.filter((dish) => dish.featured)[0]}
+            promotion={
+              this.props.promotions.filter((promotion) => promotion.featured)[0]
+            }
+            pomotiontwo={
+              this.props.promotions.filter(
+                (promotiontwo) => promotiontwo.featured
+              )[1]
+            }
+          />
+        </div>
       );
     };
 

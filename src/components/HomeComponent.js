@@ -12,13 +12,17 @@ function RenderCard({ item }) {
   //console.log(item);
   return (
     <Card>
-      <CardImg src={item.image} alt={item.name} />
+      <CardImg src={item.image} alt={item.name} className="myImg" />
       <CardBody>
         <CardTitle>{item.name}</CardTitle>
         {item.designation ? (
           <CardSubtitle>{item.designation}</CardSubtitle>
         ) : null}
         <CardText>{item.description}</CardText>
+
+        <CardText style={{ color: "#BA9E50" }}>
+          Price : RWF 1400 | 40% off
+        </CardText>
       </CardBody>
     </Card>
   );
@@ -39,7 +43,7 @@ function Home(props) {
           <RenderCard item={props.promotion} />
         </div>
         <div className="col-12 col-md m-1">
-          <RenderCard item={props.leader} />
+          <RenderCard item={props.pomotiontwo} />
         </div>
       </div>
     </div>
